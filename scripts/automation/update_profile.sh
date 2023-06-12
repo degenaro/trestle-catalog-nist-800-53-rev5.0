@@ -7,6 +7,8 @@ export COMMIT_BODY="Sync catalogs with $CATALOG repo"
 git config --global user.email "$EMAIL"
 git config --global user.name "$ENAME"
 
+echo "HERE"
+
 echo "$REPO_PROFILE"
 ls "$REPO_PROFILE"
 
