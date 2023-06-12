@@ -20,6 +20,10 @@ cd "$REPO_PROFILE"
 
 git checkout -b "catalogs_autoupdate_$GITHUB_RUN_ID"
 cp -r ../catalogs .
+
+echo "ls catalogs"
+ls catalogs
+
 if [ -z "$(git status --porcelain)" ]; then 
   echo "Nothing to commit"
 else
