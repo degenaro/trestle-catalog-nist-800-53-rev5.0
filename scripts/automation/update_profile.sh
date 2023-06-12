@@ -8,6 +8,10 @@ git config --global user.email "$EMAIL"
 git config --global user.name "$ENAME"
 
 echo "HERE"
+echo "pwd"
+pwd
+echo "ls"
+ls -atl
 
 echo "$REPO_PROFILE"
 ls "$REPO_PROFILE"
