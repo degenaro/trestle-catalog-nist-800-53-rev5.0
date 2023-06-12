@@ -18,6 +18,8 @@ ls "$REPO_PROFILE"
 
 cd "$REPO_PROFILE"
 
+XURL_PROFILE=https://github.com/$REPO_BASE/$REPO_PROFILE
+
 git pull
 git checkout -b "catalogs_autoupdate_$GITHUB_RUN_ID"
 cp -r ../catalogs .
@@ -33,9 +35,15 @@ else
      echo "Nothing to commit"
   else
      git commit --signoff --message "$COMMIT_TITLE"
-     remote=$URL_PROFILE
+     remote=$XURL_PROFILE
+     
+     echo "push"
+     
      git push -u "$remote" "catalogs_autoupdate_$GITHUB_RUN_ID"
      echo $COMMIT_BODY
+     
+     echo "PR"
+     
      gh pr create -t "$COMMIT_TITLE" -b "$COMMIT_BODY" -B "develop" -H "catalogs_autoupdate_$GITHUB_RUN_ID" 
   fi
 fi
