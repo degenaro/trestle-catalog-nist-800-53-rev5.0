@@ -44,6 +44,9 @@ else
      
      echo "PR"
      
+     echo "COMMIT_TITLE = $COMMIT_TITLE"    
+     echo "COMMIT_BODY = $COMMIT_BODY"
+     
      gh pr create -t "$COMMIT_TITLE" -b "$COMMIT_BODY" -B "develop" -H "catalogs_autoupdate_$GITHUB_RUN_ID" 
   fi
 fi
