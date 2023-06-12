@@ -6,7 +6,12 @@ export COMMIT_TITLE="chore: Catalogs automatic update."
 export COMMIT_BODY="Sync catalogs with $CATALOG repo"
 git config --global user.email "$EMAIL"
 git config --global user.name "$ENAME"
+
+echo "$REPO_PROFILE"
+ls "$REPO_PROFILE"
+
 cd "$REPO_PROFILE"
+
 git checkout -b "catalogs_autoupdate_$GITHUB_RUN_ID"
 cp -r ../catalogs .
 if [ -z "$(git status --porcelain)" ]; then 
