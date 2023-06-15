@@ -1,8 +1,6 @@
 ## compliance-trestle-template-catalog
 
-compliance-trestle template for agile authoring of catalogs
-
-Note: This repo is currently a `Work-In-Progress`...
+This repo comprises NIST 800-53 Rev5 as OSCAL catalog.
 
 ##### About
 
