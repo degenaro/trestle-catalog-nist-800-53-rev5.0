@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.2 (2023-06-16)
+### Fix
+* Revised catalog with changes ([`d6f4ab4`](https://github.com/degenaro/trestle-catalog-nist-800-53-rev5/commit/d6f4ab4ca64bb82ddd487c908e46ceb12ffca9ab))
+
 ## v0.1.1 (2023-06-15)
 ### Fix
 * OSCAL version 1.04 ([`acf6bba`](https://github.com/degenaro/trestle-catalog-nist-800-53-rev5/commit/acf6bbab198f325adf938a86ada3df8b7d7a592e))
