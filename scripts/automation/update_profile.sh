@@ -4,29 +4,12 @@ source config.env
 
 export COMMIT_TITLE="chore: Catalogs automatic update."
 export COMMIT_BODY="Sync catalogs with $CATALOG repo"
+export COMMIT_SIGNOFF="Signed-off-by: $ENAME <$EMAIL>"
 git config --global user.email "$EMAIL"
 git config --global user.name "$ENAME"
-
-echo "HERE"
-echo "pwd"
-pwd
-echo "ls"
-ls -atl
-
-echo "$REPO_PROFILE"
-ls "$REPO_PROFILE"
-
 cd "$REPO_PROFILE"
-
-XURL_PROFILE=https://github.com/$REPO_BASE/$REPO_PROFILE
-
-git pull
 git checkout -b "catalogs_autoupdate_$GITHUB_RUN_ID"
 cp -r ../catalogs .
-
-echo "ls catalogs"
-ls catalogs
-
 if [ -z "$(git status --porcelain)" ]; then 
   echo "Nothing to commit"
 else
@@ -34,19 +17,10 @@ else
   if [ -z "$(git status --untracked-files=no --porcelain)" ]; then 
      echo "Nothing to commit"
   else
-     git commit --signoff --message "$COMMIT_TITLE"
-     remote=$XURL_PROFILE
-     
-     echo "push"
-     
+     git commit --message "$COMMIT_TITLE \n\n$COMMIT_SIGNOFF"
+     remote=$URL_PROFILE
      git push -u "$remote" "catalogs_autoupdate_$GITHUB_RUN_ID"
      echo $COMMIT_BODY
-     
-     echo "PR"
-     
-     echo "COMMIT_TITLE = $COMMIT_TITLE"    
-     echo "COMMIT_BODY = $COMMIT_BODY"
-     
      gh pr create -t "$COMMIT_TITLE" -b "$COMMIT_BODY" -B "develop" -H "catalogs_autoupdate_$GITHUB_RUN_ID" 
   fi
 fi
