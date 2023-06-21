@@ -2,6 +2,8 @@
 
 CHANGES=`git diff-tree --no-commit-id --name-only -r HEAD`
 
+echo "CHANGES = $CHANGES"
+
 md_changed=false
 json_changed=false
 xlsx_changed=false
@@ -17,6 +19,9 @@ xlsx1=$"^data/"
 xlsx2=$"\.xlsx$"
 
 for val in ${CHANGES[@]} ; do
+
+  echo "val = $val"
+
   if [[ $val =~ $md1 && $val =~ $md2 ]]; then
     md_changed=true
   fi
