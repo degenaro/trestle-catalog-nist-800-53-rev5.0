@@ -2,6 +2,8 @@
 
 CHANGES=`git diff-tree --no-commit-id --name-only -r HEAD`
 
+echo "CHANGES = $CHANGES"
+
 md_changed=false
 json_changed=false
 xlsx_changed=false
