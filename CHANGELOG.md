@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.9 (2023-06-22)
+### Fix
+* V1.0.0 ([`6d8b147`](https://github.com/degenaro/trestle-catalog-nist-800-53-rev5/commit/6d8b147594c8956550270b81ca3aa0ba8cb01922))
+
 ## v0.1.8 (2023-06-21)
 ### Fix
 * 1.0.4 ([`9756d5c`](https://github.com/degenaro/trestle-catalog-nist-800-53-rev5/commit/9756d5c6f93c9afe7d8846a61249fcdb9aec67a2))
